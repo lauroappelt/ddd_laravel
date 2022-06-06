@@ -3,6 +3,7 @@
 namespace Domain\Task\DataTransferObjects;
 
 use Spatie\DataTransferObject\DataTransferObject;
+use App\Web\Task\Requests\TaskRequest;
 
 class TaskData extends DataTransferObject
 {
