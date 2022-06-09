@@ -18,7 +18,7 @@ class TaskController extends Controller
 
     public function store(TaskRequest $taskRequest, CreateTaskAction $action)
     {
-        $data = TaskData::fromRequest($request);
+        $data = TaskData::fromRequest($taskRequest);
         $response = $action($data);
     }
 }
