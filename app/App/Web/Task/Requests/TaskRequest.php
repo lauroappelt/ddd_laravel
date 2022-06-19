@@ -6,6 +6,9 @@ use Illuminate\Foundation\Http\FormRequest;
 class TaskRequest extends FormRequest
 {
     public function rules(){
-        return [];
+        return [
+            'task' => 'required',
+            'category' => 'required'
+        ];
     }
 }

@@ -9,7 +9,10 @@ class CreateTaskAction
 
     public function __invoke(TaskData $taskData): Task
     {
-        return Task::create($taskData);
+        return Task::create([
+            'task' => $taskData->task,
+            'category' => $taskData->category
+        ]);
     }
 
 }

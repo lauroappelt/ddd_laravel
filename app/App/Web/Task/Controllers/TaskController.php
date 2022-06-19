@@ -17,8 +17,9 @@ class TaskController extends Controller
     }
 
     public function store(TaskRequest $taskRequest, CreateTaskAction $action)
-    {
+    {   
         $data = TaskData::fromRequest($taskRequest);
         $response = $action($data);
+        return back()->with(['success' => 'task created']);
     }
 }

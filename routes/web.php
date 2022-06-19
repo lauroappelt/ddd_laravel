@@ -15,3 +15,4 @@ use App\Web\Task\Controllers\TaskController;
 */
 
 Route::get('/', [TaskController::class, 'index']);
+Route::post('/store', [TaskController::class, 'store'])->name('save-task');

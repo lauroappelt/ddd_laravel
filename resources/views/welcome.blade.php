@@ -23,18 +23,26 @@
     </head>
     <body class="antialiased">
         <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="mb-3">
-                        <label for="task" class="form-label">Task</label>
-                        <input type="text" class="form-control" name="task">
-                    </div>
-                    <div class="mb-3">
-                        <label for="category" class="form-label">Category</label>
-                        <input type="text" class="form-control" name="category">
-                    </div>
-                    <button type="submit" class="btn btn-secondary">Send</button>
+            @if(session('success'))
+                <div class="row">
+                    <p class="text-success">{{session('success')}}</p>
                 </div>
+            @endif
+            <div class="row">
+                <form action="{{route('save-task')}}" method="post">
+                    @csrf
+                    <div class="col-md-4">
+                        <div class="mb-3">
+                            <label for="task" class="form-label">Task</label>
+                            <input type="text" class="form-control" name="task">
+                        </div>
+                        <div class="mb-3">
+                            <label for="category" class="form-label">Category</label>
+                            <input type="text" class="form-control" name="category">
+                        </div>
+                        <button type="submit" class="btn btn-secondary">Send</button>
+                    </div>
+                </form>
             </div>
         </div>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
