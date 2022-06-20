@@ -14,6 +14,7 @@
         "guzzlehttp/guzzle": "^7.0.1",
         "laravel/framework": "^8.0",
         "laravel/tinker": "^2.0",
+        "myclabs/php-enum": "^1.8",
         "spatie/data-transfer-object": "1.14.1"
     },
     "require-dev": {

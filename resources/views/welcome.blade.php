@@ -28,6 +28,13 @@
                     <p class="text-success">{{session('success')}}</p>
                 </div>
             @endif
+            @if($errors->any())
+                @foreach ($errors->all() as $error )
+                    <div class="row">
+                        <p class="text-danger">{{$error}}</p>
+                    </div>
+                @endforeach
+            @endif
             <div class="row">
                 <form action="{{route('save-task')}}" method="post">
                     @csrf
@@ -43,6 +50,13 @@
                         <button type="submit" class="btn btn-secondary">Send</button>
                     </div>
                 </form>
+            </div>
+            <br>
+            <br>
+            <div class="row">
+                @foreach ($tasks as $task)
+                    <div class="col-md-12"><p style="text-decoration: {{$task->status}}">{{$task->task}}</p></div>
+                @endforeach
             </div>
         </div>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
